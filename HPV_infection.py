@@ -272,7 +272,7 @@ def survey(results, category_names):
 survey(results, category_names)
 
 os.chdir(r"G:\cervical_cancer_multiomics\results\expression_table\\")
-plt.savefig(r"HPV_barh_new_0823.pdf",dpi=300,bbox_inches="tight")
+plt.savefig(r"HPV_barh.pdf",dpi=300,bbox_inches="tight")
 
 
 

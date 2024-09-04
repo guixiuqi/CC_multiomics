@@ -35,7 +35,7 @@ chromosome_x_dict["chrX"] = x
 
 x_end = chromosome_x_dict["chrX"]+chro_l_df.loc["chrX",1]
 
-gene_location_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\WES\pQTL\gene_location.txt",sep="\t",header=None,index_col=0)
+gene_location_df = pd.read_csv(r"gene_location.txt",sep="\t",header=None,index_col=0)
 
 
 
@@ -105,22 +105,22 @@ def drew_spearmans_heatmap(spearman_df,figname):
     
 os.chdir(r"G:\cervical_cancer_multiomics\Code\Fig2")           
      
-spearman_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\cnvkit\tumor_gistic2\multiOmicsVic\cna_dia_correlation_fdr_0.01.csv",
+spearman_df = pd.read_csv(r".\multiOmicsVic\cna_dia_correlation_fdr_0.01.csv",
                           index_col=0,sep="\t")            
 drew_spearmans_heatmap(spearman_df,"cna_dia_correlation_fdr_0.01_cis_trans_number.pdf")
 
 
-spearman_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\cnvkit\tumor_gistic2\multiOmicsVic\cna_tmt_correlation_fdr_0.01.csv",
+spearman_df = pd.read_csv(r".\multiOmicsVic\cna_tmt_correlation_fdr_0.01.csv",
                           index_col=0,sep="\t")            
 drew_spearmans_heatmap(spearman_df,"cna_tmt_correlation_fdr_0.01_cis_trans_number.pdf")
 
 
-spearman_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\cnvkit\tumor_gistic2\multiOmicsVic\cna_rna_correlation_fdr_0.01.csv",
+spearman_df = pd.read_csv(r".\multiOmicsVic\cna_rna_correlation_fdr_0.01.csv",
                           index_col=0,sep="\t")            
 drew_spearmans_heatmap(spearman_df,"cna_rna_correlation_fdr_0.01_cis_trans_number.pdf")
 
 
-spearman_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\cnvkit\tumor_gistic2\multiOmicsVic\cna_rna_correlation_fdr_0.001.csv",
+spearman_df = pd.read_csv(r".\multiOmicsVic\cna_rna_correlation_fdr_0.001.csv",
                           index_col=0,sep="\t")            
 drew_spearmans_heatmap(spearman_df,"cna_rna_correlation_fdr_0.001_cis_trans_number.pdf")
 
@@ -128,15 +128,15 @@ drew_spearmans_heatmap(spearman_df,"cna_rna_correlation_fdr_0.001_cis_trans_numb
 
 
 
-spearman_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\cnvkit\tumor_gistic2\multiOmicsVic\cna_Phosphoprotein_correlation_fdr_0.01.csv",
+spearman_df = pd.read_csv(r".\multiOmicsVic\cna_Phosphoprotein_correlation_fdr_0.01.csv",
                           index_col=0,sep="\t")            
 drew_spearmans_heatmap(spearman_df,"cna_Phosphoprotein_correlation_fdr_0.01_cis_trans_number.pdf")
 
 
 
-spearman_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\cnvkit\tumor_gistic2\multiOmicsVic\cna_rna_correlation_fdr_0.01_FPKM.csv",
+spearman_df = pd.read_csv(r".\multiOmicsVic\cna_rna_correlation_fdr_0.01_TPM.csv",
                           index_col=0,sep="\t")            
-drew_spearmans_heatmap(spearman_df,"cna_rna_correlation_fdr_0.01_cis_trans_number_FPKM.pdf")
+drew_spearmans_heatmap(spearman_df,"cna_rna_correlation_fdr_0.01_cis_trans_number_TPM.pdf")
 
 
 

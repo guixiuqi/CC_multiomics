@@ -23,7 +23,7 @@ import collections
 os.chdir(r"G:\cervical_cancer_multiomics\results\WES\mutation_number_per_sample")
 
 def rank_gene(gene_list):
-    mutation_f = r"G:\cervical_cancer_multiomics\results\WES\mutation_number_per_sample\tumor_gene_mutation_0_1.xlsx"
+    mutation_f = r"tumor_gene_mutation_0_1.xlsx"
 
     mutation_df = pd.read_excel(mutation_f,index_col=0)
     mutation_df = mutation_df.drop(columns=['TB113-1',"TB83"])
@@ -64,11 +64,10 @@ mutation_color_dict = {'nonframeshift deletion':'blue',
  'Splicing':'teal',
  'WT':'white'}
 
-#tumor_maf_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\WES\pQTL\coding_region_mutation_Tumor_annovar_remove_B_113_1_B_75_remove_ncRNA.maf",sep="\t")
 
 def get_gene_mutation_type(gene_list=[]):
     
-    tumor_maf_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\WES\remove_error_tumor_mutation_annovar_for_mutsigCV_coding.maf",sep="\t") #only 133samples, no mutation detected in TB154 sample
+    tumor_maf_df = pd.read_csv(r"mutation_annovar_for_mutsigCV_coding.maf",sep="\t") #only 133samples, no mutation detected in TB154 sample
     
     non_silent_df = tumor_maf_df.loc[tumor_maf_df['Variant_Classification']!='Silent']
     
@@ -623,7 +622,6 @@ def drew_bar_tumor_purity_absolute(ax):
 
    
     
-#tumor_maf_df = pd.read_csv(r"G:\cervical_cancer_multiomics\results\WES\all_sample_all_mutation_annovar_to_maf_add_ref_alt_count_remove_11_sample_coding.maf",sep="\t")    
 import argparse
 import matplotlib.gridspec as gridspec
 from matplotlib.gridspec import GridSpec
@@ -662,7 +660,7 @@ drew_bar_size(ax6)
 ax6 = fig.add_subplot(gs[11:12,23:25])
 drew_bar_tumor_purity_absolute(ax6)
 
-plt.savefig("mutation_pattern_all_134_remove_TB113-TB83_tumor_sample.pdf",dpi=300,bbox_inches="tight")
+plt.savefig("mutation_pattern.pdf",dpi=300,bbox_inches="tight")
 
     
     
